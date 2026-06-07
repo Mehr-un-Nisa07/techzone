@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | TechZone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="topbar"><div class="topbar-inner"><span>🚚 Free delivery on orders above Rs. 5,000</span><span>📞 Support: +92 300 123 4567</span></div></div>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">⚡ Tech<span>Zone</span></a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="cart.html" class="nav-icon cart-icon">🛒 <span class="cart-count" id="cartCount">0</span></a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-label">Get In Touch</p>
+    <h1 class="page-hero-title">Contact Us</h1>
+    <p class="page-hero-sub">Questions, orders, returns — we're here to help 24/7.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="fade">
+        <p class="sec-label">Reach Us</p>
+        <h2 class="sec-title">We'd Love to <span>Hear From You</span></h2>
+        <div style="width:36px;height:3px;background:var(--accent);border-radius:2px;margin:0.8rem 0 2rem;"></div>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div><strong>Our Address</strong><p>Main Boulevard, Gulberg III<br>Lahore, Punjab, Pakistan</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div><strong>Phone / WhatsApp</strong><p>+92 300 123 4567<br>+92 321 987 6543</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉</div>
+            <div><strong>Email</strong><p>support@techzone.pk<br>orders@techzone.pk</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div><strong>Business Hours</strong><p>Monday – Saturday: 10:00 AM – 8:00 PM<br>Sunday: 12:00 PM – 6:00 PM</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🚚</div>
+            <div><strong>Delivery Info</strong><p>Free delivery on orders above Rs. 5,000<br>Nationwide delivery in 1–3 business days</p></div>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem;background:var(--card);border:1px solid var(--border);border-radius:0.8rem;padding:1.3rem 1.5rem;">
+          <p style="font-size:0.83rem;color:var(--body);line-height:1.7;"><strong style="color:var(--accent);">💬 WhatsApp us directly:</strong> For the fastest response, send us a WhatsApp message at <strong style="color:var(--dark);">+92 300 123 4567</strong>. We typically reply within 15 minutes during business hours.</p>
+        </div>
+      </div>
+
+      <div class="contact-form-box fade" style="margin-top: 22vh;">
+        <h3>Send Us a Message</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" id="cname" placeholder="e.g. Ahmed Khan"/>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="cphone" placeholder="03XX XXX XXXX"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="cemail" placeholder="your@email.com"/>
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <select id="csubject">
+            <option>Order Enquiry</option>
+            <option>Product Question</option>
+            <option>Return / Refund</option>
+            <option>Delivery Issue</option>
+            <option>Technical Support</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea id="cmessage" placeholder="Tell us how we can help you..."></textarea>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;font-size:0.95rem;" onclick="submitContact()">
+          Send Message →
+        </button>
+        <div class="form-success" id="formSuccess">
+          ✅ Message sent! We'll get back to you within 24 hours.
+        </div>
+        <p style="font-size:0.74rem;color:var(--muted);margin-top:0.9rem;text-align:center;">🔒 Your information is safe with us and never shared.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section bg2">
+  <div class="container">
+    <div class="sec-header fade" style="text-align:center;max-width:500px;margin:0 auto 3rem;">
+      <p class="sec-label">Quick Answers</p>
+      <h2 class="sec-title">Frequently Asked <span>Questions</span></h2>
+    </div>
+    <div style="max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:1rem;">
+      <div class="faq-item fade" onclick="toggleFaq(this)">
+        <div class="faq-q">Are all products on TechZone 100% genuine? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Yes, absolutely. Every product we sell is sourced directly from authorised distributors and comes with an official warranty. We have a strict zero-tolerance policy for counterfeit goods.</div>
+      </div>
+      <div class="faq-item fade d1" onclick="toggleFaq(this)">
+        <div class="faq-q">How long does delivery take? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Orders are typically delivered within 1–3 business days across major cities in Pakistan including Lahore, Karachi, Islamabad, Faisalabad and Rawalpindi. Remote areas may take 3–5 business days.</div>
+      </div>
+      <div class="faq-item fade d2" onclick="toggleFaq(this)">
+        <div class="faq-q">What is your return policy? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">We offer a 7-day hassle-free return policy on most products. Items must be in original packaging and unused condition. Simply contact us within 7 days of receiving your order and we'll arrange a pickup.</div>
+      </div>
+      <div class="faq-item fade" onclick="toggleFaq(this)">
+        <div class="faq-q">What payment methods do you accept? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">We accept Cash on Delivery (COD), JazzCash, EasyPaisa, bank transfer, and all major debit/credit cards (Visa, Mastercard). All online payments are 100% secure and encrypted.</div>
+      </div>
+      <div class="faq-item fade d1" onclick="toggleFaq(this)">
+        <div class="faq-q">Do you offer warranty on products? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Yes! All products come with the manufacturer's official warranty. Smartphones and laptops typically carry 1-year warranties. Warranty details are mentioned on each product page.</div>
+      </div>
+      <div class="faq-item fade d2" onclick="toggleFaq(this)">
+        <div class="faq-q">Can I track my order? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Yes. Once your order is dispatched you will receive an SMS with a tracking number. You can also contact our support team anytime for a real-time update on your delivery.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">⚡ Tech<span>Zone</span></div>
+        <p>Pakistan's most trusted online electronics store. Genuine products, fast delivery, real support.</p>
+        <div class="footer-socials">
+          <a href="#">📘</a><a href="#">📸</a><a href="#">🐦</a><a href="#">▶️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="products.html">All Products</a>
+        <a href="products.html">Smartphones</a>
+        <a href="products.html">Laptops</a>
+        <a href="products.html">Deals</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Return Policy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>📍 Main Boulevard, Gulberg III, Lahore</p>
+        <p>📞 +92 300 123 4567</p>
+        <p>✉ support@techzone.pk</p>
+        <p>🕐 Mon–Sat: 10AM–8PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 TechZone · All Rights Reserved · Built with HTML, CSS & JavaScript</p>
+      <div class="payment-badges">
+        <span>💳 Visa</span><span>💳 Mastercard</span><span>📱 JazzCash</span><span>📱 EasyPaisa</span>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="cart-toast" id="cartToast">✅ Item added to cart!</div>
+<script src="main.js"></script>
+<script>
+function submitContact() {
+  const name = document.getElementById('cname').value.trim();
+  const email = document.getElementById('cemail').value.trim();
+  const msg = document.getElementById('cmessage').value.trim();
+  if (!name || !email || !msg) { alert('Please fill in your name, email and message.'); return; }
+  document.getElementById('formSuccess').style.display = 'block';
+  document.querySelector('.btn-primary').disabled = true;
+  document.querySelector('.btn-primary').style.opacity = '0.5';
+}
+function toggleFaq(el) {
+  el.classList.toggle('open');
+}
+</script>
+</body>
+</html>

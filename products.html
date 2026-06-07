@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products | TechZone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="topbar"><div class="topbar-inner"><span>🚚 Free delivery on orders above Rs. 5,000</span><span>📞 Support: +92 300 123 4567</span></div></div>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">⚡ Tech<span>Zone</span></a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="cart.html" class="nav-icon cart-icon">🛒 <span class="cart-count" id="cartCount">0</span></a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-label">Our Collection</p>
+    <h1 class="page-hero-title">All Products</h1>
+    <p class="page-hero-sub">Browse 500+ premium electronics at unbeatable prices.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="products-page-layout">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar fade">
+        <div class="sidebar-section">
+          <h3>Categories</h3>
+          <label class="filter-item"><input type="radio" name="cat" value="all" checked/> All Products</label>
+          <label class="filter-item"><input type="radio" name="cat" value="Smartphones"/> Smartphones</label>
+          <label class="filter-item"><input type="radio" name="cat" value="Laptops"/> Laptops</label>
+          <label class="filter-item"><input type="radio" name="cat" value="Audio"/> Audio</label>
+          <label class="filter-item"><input type="radio" name="cat" value="Smart Watch"/> Smart Watches</label>
+          <label class="filter-item"><input type="radio" name="cat" value="Cameras"/> Cameras</label>
+          <label class="filter-item"><input type="radio" name="cat" value="Gaming"/> Gaming</label>
+          <label class="filter-item"><input type="radio" name="cat" value="Accessories"/> Accessories</label>
+          <label class="filter-item"><input type="radio" name="cat" value="Smart Home"/> Smart Home</label>
+          <label class="filter-item"><input type="radio" name="cat" value="Monitors"/> Monitors</label>
+        </div>
+        <div class="sidebar-section">
+          <h3>Price Range</h3>
+          <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.8rem;">Up to: <strong style="color:var(--accent);" id="priceVal">Rs. 350,000</strong></p>
+          <input type="range" class="price-range" id="priceRange" min="1000" max="350000" value="350000" step="1000"
+            oninput="document.getElementById('priceVal').textContent='Rs. '+parseInt(this.value).toLocaleString()"/>
+        </div>
+        <div class="sidebar-section">
+          <h3>Availability</h3>
+          <label class="filter-item"><input type="checkbox" id="filterSale"/> On Sale Only</label>
+          <label class="filter-item"><input type="checkbox" id="filterNew"/> New Arrivals Only</label>
+        </div>
+        <div class="sidebar-section">
+          <h3>Min. Rating</h3>
+          <label class="filter-item"><input type="radio" name="rating" value="0" checked/> All Ratings</label>
+          <label class="filter-item"><input type="radio" name="rating" value="5"/> ⭐⭐⭐⭐⭐ 5 Stars</label>
+          <label class="filter-item"><input type="radio" name="rating" value="4"/> ⭐⭐⭐⭐ 4+ Stars</label>
+        </div>
+        <button class="sidebar-btn" id="applyBtn">Apply Filters</button>
+        <button class="sidebar-btn" id="resetBtn" style="margin-top:0.5rem;background:transparent;border:1px solid var(--border);color:var(--muted);">Reset Filters</button>
+      </aside>
+
+      <!-- PRODUCTS -->
+      <div>
+        <div class="products-header">
+          <p class="products-count">Showing <strong style="color:var(--dark);" id="showCount">18</strong> products</p>
+          <select class="sort-select" id="sortSelect">
+            <option value="featured">Sort: Featured</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="rating">Best Rating</option>
+          </select>
+        </div>
+
+        <div class="products-full-grid" id="productsGrid">
+          <!-- data-cat, data-price, data-rating, data-sale, data-new on each card -->
+
+          <div class="product-card fade" data-cat="Smartphones" data-price="189999" data-rating="5" data-sale="true" data-new="false">
+            <div class="product-img">📱</div><div class="badge-sale">-10%</div>
+            <div class="product-body"><span class="product-cat">Smartphones</span><h3>ProMax X15 Ultra</h3>
+            <div class="product-rating">⭐⭐⭐⭐⭐ <span>(128)</span></div>
+            <div class="product-price-row"><span class="p-price">Rs. 189,999</span><span class="p-old">Rs. 210,000</span></div>
+            <button class="add-to-cart" onclick="addToCart('ProMax X15 Ultra',189999)">Add to Cart 🛒</button></div>
+          </div>
+
+          <div class="product-card fade d1" data-cat="Smartphones" data-price="215000" data-rating="5" data-sale="false" data-new="true">
+            <div class="product-img">📱</div><div class="badge-new2">New</div>
+            <div class="product-body"><span class="product-cat">Smartphones</span><h3>Galaxy S25 Ultra</h3>
+            <div class="product-rating">⭐⭐⭐⭐⭐ <span>(204)</span></div>
+            <div class="product-price-row"><span class="p-price">Rs. 215,000</span></div>
+            <button class="add-to-cart" onclick="addToCart('Galaxy S25 Ultra',215000)">Add to Cart 🛒</button></div>
+          </div>
+
+          <div class="product-card fade d2" data-cat="Smartphones" data-price="54999" data-rating="4" data-sale="false" data-new="false">
+            <div class="product-img">📱</div>
+            <div class="product-body"><span class="product-cat">Smartphones</span><h3>Redmi Note 14 Pro</h3>
+            <div class="product-rating">⭐⭐⭐⭐ <span>(315)</span></div>
+            <div class="product-price-row"><span class="p-price">Rs. 54,999</span></div>
+            <button class="add-to-cart" onclick="addToCart('Redmi Note 14 Pro',54999)">Add to Cart 🛒</button></div>
+          </div>
+
+          <div class="product-card fade" data-cat="Laptops" data-price="245000" data-rating="5" data-sale="false" data-new="true">
+            <div class="product-img">💻</div><div class="badge-new2">New</div>
+            <div class="product-body"><span class="product-cat">Laptops</span><h3>UltraBook Pro 14</h3>
+            <div class="product-rating">⭐⭐⭐⭐⭐ <span>(85)</span></div>
+            <div class="product-price-row"><span class="p-price">Rs. 245,000</span></div>
+            <button class="add-to-cart" onclick="addToCart('UltraBook Pro 14',245000)">Add to Cart 🛒</button></div>
+          </div>
+
+          <div class="product-card fade d1" data-cat="Laptops" data-price="310000" data-rating="5" data-sale="true" data-new="false">
+            <div class="product-img">💻</div><div class="badge-sale">-12%</div>
+            <div class="product-body"><span class="product-cat">Laptops</span><h3>Dell XPS 15 (2025)</h3>
+            <div class="product-rating">⭐⭐⭐⭐⭐ <span>(62)</span></div>
+            <div class="product-price-row"><span class="p-price">Rs. 310,000</span><span class="p-old">Rs. 352,000</span></div>
+            <button class="add-to-cart" onclick="addToCart('Dell XPS 15',310000)">Add to Cart 🛒</button></div>
+          </div>
+
+          <div class="product-card fade d2" data-cat="Laptops" data-price="145000" data-rating="4" data-sale="false" data-new="false">
+            <div class="product-img">💻</div>
+            <div class="product-body"><span class="product-cat">Laptops</span><h3>HP Pavilion 15 Core i7</h3>
+            <div class="product-rating">⭐⭐⭐⭐ <span>(147)</span></div>
+            <div class="product-price-row"><span class="p-price">Rs. 145,000</span></div>
+            <button class="add-to-cart" onclick="addToCart('HP Pavilion 15',145000)">Add to Cart 🛒</button></div>
+          </div>
+
+          <div class="product-card fade" data-cat="Audio" data-price="24999" data-rating="5" data-sale="true" data-new="false">
+            <div class="product-img">🎧</div><div class="badge-sale">-20%</div>
+            <div class="product-body"><span class="product-cat">Audio</span><h3>SoundMax Pro ANC</h3>
+            <div class="product-rating">⭐⭐⭐⭐⭐ <span>(212)</span></div>
+            <div class="product-price-row"><span class="p-price">Rs. 24,999</span><span class="p-old">Rs. 31,000</span></div>
+            <button class="add-to-cart" onclick="addToCart('SoundMax Pro ANC',24999)">Add to Cart 🛒</button></div>
+          </div>
+
+          <div class="product-card fade d1" data-cat="Audio" data-price="68000" data-rating="5" data-sale="false" data-new="false">
+            <div class="product-img">🎧</div>
+            <div class="product-body"><span class="product-cat">Audio</span><h3>Sony WH-1000XM6</h3>
+            <div class="product-rating">⭐⭐⭐⭐⭐ <span>(189)</span></div>
+            <div class="product-price-row"><span class="p-price">Rs. 68,000</span></div>
+            <button class="add-to-cart" onclick="addToCart('Sony WH-1000XM6',68000)">Add to Cart 🛒</button></div>
+          </div>
+
+          <div class="product-card fade d2" data-cat="Audio" data-price="12499" data-rating="4" data-sale="false" data-new="false">
+            <div class="product-img">🔊</div>
+            <div class="product-body"><span class="product-cat">Audio</span><h3>BassBoom Portable Speaker</h3>
+            <div class="product-rating">⭐⭐⭐⭐ <span>(97)</span></div>
+            <div class="product-price-row"><span class="p-price">Rs. 12,499</span></div>
+            <button class="add-to-cart" onclick="addToCart('BassBoom Speaker',12499)">Add to Cart 🛒</button></div>
+          </div>
+
+          <div class="product-card fade" data-cat="Smart Watch" data-price="32500" data-rating="4" data-sale="false" data-new="false">
+            <div class="product-img">⌚</div>
+            <div class="product-body"><span class="product-cat">Smart Watch</span><h3>FitPro Watch Series 8</h3>
+            <div class="product-rating">⭐⭐⭐⭐ <span>(76)</span></div>
+            <div class="product-price-row"><span class="p-price">Rs. 32,500</span></div>
+            <button class="add-to-cart" onclick="addToCart('FitPro Watch Series 8',32500)">Add to Cart 🛒</button></div>
+          </div>
+
+          <div class="product-card fade d1" data-cat="Smart Watch" data-price="145000" data-rating="5" data-sale="false" data-new="true">
+            <div class="product-img">⌚</div><div class="badge-new2">New</div>
+            <div class="product-body"><span class="product-cat">Smart Watch</span><h3>Apple Watch Ultra 3</h3>
+            <div class="product-rating">⭐⭐⭐⭐⭐ <span>(241)</span></div>
+            <div class="product-price-row"><span class="p-price">Rs. 145,000</span></div>
+            <button class="add-to-cart" onclick="addToCart('Apple Watch Ultra 3',145000)">Add to Cart 🛒</button></div>
+          </div>
+
+          <div class="product-card fade d2" data-cat="Cameras" data-price="85000" data-rating="5" data-sale="true" data-new="false">
+            <div class="product-img">📷</div><div class="badge-sale">-15%</div>
+            <div class="product-body"><span class="product-cat">Cameras</span><h3>SnapShot 4K DSLR</h3>
+            <div class="product-rating">⭐⭐⭐⭐⭐ <span>(54)</span></div>
+            <div class="product-price-row"><span class="p-price">Rs. 85,000</span><span class="p-old">Rs. 100,000</span></div>
+            <button class="add-to-cart" onclick="addToCart('SnapShot 4K DSLR',85000)">Add to Cart 🛒</button></div>
+          </div>
+
+          <div class="product-card fade" data-cat="Gaming" data-price="8999" data-rating="5" data-sale="false" data-new="true">
+            <div class="product-img">🎮</div><div class="badge-new2">New</div>
+            <div class="product-body"><span class="product-cat">Gaming</span><h3>GamePad X Pro Controller</h3>
+            <div class="product-rating">⭐⭐⭐⭐⭐ <span>(163)</span></div>
+            <div class="product-price-row"><span class="p-price">Rs. 8,999</span></div>
+            <button class="add-to-cart" onclick="addToCart('GamePad X Pro',8999)">Add to Cart 🛒</button></div>
+          </div>
+
+          <div class="product-card fade d1" data-cat="Gaming" data-price="14500" data-rating="4" data-sale="false" data-new="false">
+            <div class="product-img">🎮</div>
+            <div class="product-body"><span class="product-cat">Gaming</span><h3>Gaming Mechanical Keyboard</h3>
+            <div class="product-rating">⭐⭐⭐⭐ <span>(88)</span></div>
+            <div class="product-price-row"><span class="p-price">Rs. 14,500</span></div>
+            <button class="add-to-cart" onclick="addToCart('Gaming Keyboard',14500)">Add to Cart 🛒</button></div>
+          </div>
+
+          <div class="product-card fade d2" data-cat="Monitors" data-price="68000" data-rating="5" data-sale="true" data-new="false">
+            <div class="product-img">🖥️</div><div class="badge-sale">-8%</div>
+            <div class="product-body"><span class="product-cat">Monitors</span><h3>ViewClear 27" 4K Monitor</h3>
+            <div class="product-rating">⭐⭐⭐⭐⭐ <span>(41)</span></div>
+            <div class="product-price-row"><span class="p-price">Rs. 68,000</span><span class="p-old">Rs. 74,000</span></div>
+            <button class="add-to-cart" onclick="addToCart('ViewClear 27 4K',68000)">Add to Cart 🛒</button></div>
+          </div>
+
+          <div class="product-card fade" data-cat="Accessories" data-price="3499" data-rating="5" data-sale="false" data-new="false">
+            <div class="product-img">🔌</div>
+            <div class="product-body"><span class="product-cat">Accessories</span><h3>65W GaN Fast Charger</h3>
+            <div class="product-rating">⭐⭐⭐⭐⭐ <span>(302)</span></div>
+            <div class="product-price-row"><span class="p-price">Rs. 3,499</span></div>
+            <button class="add-to-cart" onclick="addToCart('65W GaN Charger',3499)">Add to Cart 🛒</button></div>
+          </div>
+
+          <div class="product-card fade d1" data-cat="Smart Home" data-price="4999" data-rating="4" data-sale="false" data-new="false">
+            <div class="product-img">🏠</div>
+            <div class="product-body"><span class="product-cat">Smart Home</span><h3>Smart LED Bulb Set (4pcs)</h3>
+            <div class="product-rating">⭐⭐⭐⭐ <span>(134)</span></div>
+            <div class="product-price-row"><span class="p-price">Rs. 4,999</span></div>
+            <button class="add-to-cart" onclick="addToCart('Smart LED Bulbs',4999)">Add to Cart 🛒</button></div>
+          </div>
+
+          <div class="product-card fade d2" data-cat="Smart Home" data-price="22000" data-rating="5" data-sale="false" data-new="false">
+            <div class="product-img">📡</div>
+            <div class="product-body"><span class="product-cat">Smart Home</span><h3>WiFi Router Mesh System</h3>
+            <div class="product-rating">⭐⭐⭐⭐⭐ <span>(77)</span></div>
+            <div class="product-price-row"><span class="p-price">Rs. 22,000</span></div>
+            <button class="add-to-cart" onclick="addToCart('WiFi Mesh Router',22000)">Add to Cart 🛒</button></div>
+          </div>
+
+        </div>
+
+        <!-- NO RESULTS -->
+        <div id="noResults" style="display:none;text-align:center;padding:4rem 2rem;">
+          <div style="font-size:3rem;margin-bottom:1rem;">🔍</div>
+          <h3 style="color:var(--dark);margin-bottom:0.5rem;">No products found</h3>
+          <p style="color:var(--muted);font-size:0.88rem;">Try adjusting your filters.</p>
+          <button class="sidebar-btn" style="width:auto;margin-top:1.2rem;padding:0.6rem 1.5rem;" onclick="resetFilters()">Reset Filters</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="footer-logo">⚡ Tech<span>Zone</span></div><p>Pakistan's most trusted online electronics store.</p></div>
+      <div class="footer-col"><h4>Shop</h4><a href="products.html">All Products</a><a href="products.html">Smartphones</a><a href="products.html">Laptops</a><a href="products.html">Deals</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="#">Return Policy</a></div>
+      <div class="footer-col"><h4>Contact</h4><p>📞 +92 300 123 4567</p><p>✉ support@techzone.pk</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 TechZone · All Rights Reserved</p><div class="payment-badges"><span>💳 Visa</span><span>💳 Mastercard</span><span>📱 JazzCash</span><span>📱 EasyPaisa</span></div></div>
+  </div>
+</footer>
+<div class="cart-toast" id="cartToast">✅ Item added to cart!</div>
+<script src="main.js"></script>
+<script>
+function applyFilters() {
+  const cat       = document.querySelector('input[name="cat"]:checked').value;
+  const maxPrice  = parseInt(document.getElementById('priceRange').value);
+  const minRating = parseInt(document.querySelector('input[name="rating"]:checked').value);
+  const saleOnly  = document.getElementById('filterSale').checked;
+  const newOnly   = document.getElementById('filterNew').checked;
+  const sort      = document.getElementById('sortSelect').value;
+
+  const cards = Array.from(document.querySelectorAll('#productsGrid .product-card'));
+  let visible = [];
+
+  cards.forEach(card => {
+    const cardCat    = card.dataset.cat;
+    const cardPrice  = parseInt(card.dataset.price);
+    const cardRating = parseInt(card.dataset.rating);
+    const cardSale   = card.dataset.sale === 'true';
+    const cardNew    = card.dataset.new === 'true';
+
+    const catMatch    = cat === 'all' || cardCat === cat;
+    const priceMatch  = cardPrice <= maxPrice;
+    const ratingMatch = cardRating >= minRating;
+    const saleMatch   = !saleOnly || cardSale;
+    const newMatch    = !newOnly  || cardNew;
+
+    if (catMatch && priceMatch && ratingMatch && saleMatch && newMatch) {
+      card.style.display = 'block';
+      visible.push(card);
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  // Sort visible cards
+  const grid = document.getElementById('productsGrid');
+  visible.sort((a, b) => {
+    const pa = parseInt(a.dataset.price);
+    const pb = parseInt(b.dataset.price);
+    const ra = parseInt(a.dataset.rating);
+    const rb = parseInt(b.dataset.rating);
+    if (sort === 'low')    return pa - pb;
+    if (sort === 'high')   return pb - pa;
+    if (sort === 'rating') return rb - ra;
+    return 0;
+  });
+  visible.forEach(c => grid.appendChild(c));
+
+  // Update count
+  document.getElementById('showCount').textContent = visible.length;
+  document.getElementById('noResults').style.display = visible.length === 0 ? 'block' : 'none';
+}
+
+function resetFilters() {
+  document.querySelector('input[name="cat"][value="all"]').checked = true;
+  document.getElementById('priceRange').value = 350000;
+  document.getElementById('priceVal').textContent = 'Rs. 350,000';
+  document.querySelector('input[name="rating"][value="0"]').checked = true;
+  document.getElementById('filterSale').checked = false;
+  document.getElementById('filterNew').checked  = false;
+  document.getElementById('sortSelect').value   = 'featured';
+  applyFilters();
+}
+
+// Wire up buttons and sort
+document.getElementById('applyBtn').addEventListener('click', applyFilters);
+document.getElementById('resetBtn').addEventListener('click', resetFilters);
+document.getElementById('sortSelect').addEventListener('change', applyFilters);
+
+// Also apply on any radio/checkbox change instantly
+document.querySelectorAll('.sidebar input').forEach(inp => {
+  inp.addEventListener('change', applyFilters);
+});
+document.getElementById('priceRange').addEventListener('input', applyFilters);
+
+// Init
+applyFilters();
+</script>
+</body>
+</html>

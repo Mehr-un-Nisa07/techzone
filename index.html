@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TechZone | Premium Electronics & Gadgets</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>🚚 Free delivery on orders above Rs. 5,000</span>
+    <span>📞 Support: +92 300 123 4567</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">⚡ Tech<span>Zone</span></a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="products.html" class="nav-icon" title="Search">🔍</a>
+      <a href="cart.html" class="nav-icon cart-icon" title="Cart">
+        🛒 <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-inner">
+    <div class="hero-text fade-up">
+      <span class="hero-tag">New Arrivals 2026</span>
+      <h1>Next-Gen <span>Tech</span><br>Delivered to<br>Your Door</h1>
+      <p>Discover the latest smartphones, laptops, audio gear and smart home devices. Premium quality, unbeatable prices.</p>
+      <div class="hero-btns">
+        <a href="products.html" class="btn btn-primary">Shop Now →</a>
+        <a href="products.html?cat=deals" class="btn btn-outline">View Deals</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>500+</strong><span>Products</span></div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat"><strong>10K+</strong><span>Customers</span></div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat"><strong>4.9★</strong><span>Rating</span></div>
+      </div>
+    </div>
+    <div class="hero-visual fade-up" style="transition-delay:0.2s;">
+      <div class="hero-card-big">
+        <div class="hero-card-glow"></div>
+        <div class="product-hero-img">📱</div>
+        <div class="product-hero-info">
+          <span class="badge-new">New</span>
+          <h3>ProMax X15 Ultra</h3>
+          <p>Latest flagship smartphone</p>
+          <div class="product-hero-price">
+            <span class="price-main">Rs. 189,999</span>
+            <span class="price-old">Rs. 210,000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section">
+  <div class="container">
+    <div class="sec-header fade">
+      <p class="sec-label">Browse By Category</p>
+      <h2 class="sec-title">What Are You <span>Looking For?</span></h2>
+    </div>
+    <div class="cats-grid">
+      <a href="products.html?cat=phones" class="cat-card fade">
+        <div class="cat-icon">📱</div>
+        <h3>Smartphones</h3>
+        <p>48 Products</p>
+      </a>
+      <a href="products.html?cat=laptops" class="cat-card fade d1">
+        <div class="cat-icon">💻</div>
+        <h3>Laptops</h3>
+        <p>32 Products</p>
+      </a>
+      <a href="products.html?cat=audio" class="cat-card fade d2">
+        <div class="cat-icon">🎧</div>
+        <h3>Audio</h3>
+        <p>56 Products</p>
+      </a>
+      <a href="products.html?cat=watches" class="cat-card fade d3">
+        <div class="cat-icon">⌚</div>
+        <h3>Smart Watches</h3>
+        <p>24 Products</p>
+      </a>
+      <a href="products.html?cat=accessories" class="cat-card fade">
+        <div class="cat-icon">🔌</div>
+        <h3>Accessories</h3>
+        <p>120 Products</p>
+      </a>
+      <a href="products.html?cat=cameras" class="cat-card fade d1">
+        <div class="cat-icon">📷</div>
+        <h3>Cameras</h3>
+        <p>18 Products</p>
+      </a>
+      <a href="products.html?cat=gaming" class="cat-card fade d2">
+        <div class="cat-icon">🎮</div>
+        <h3>Gaming</h3>
+        <p>40 Products</p>
+      </a>
+      <a href="products.html?cat=smarthome" class="cat-card fade d3">
+        <div class="cat-icon">🏠</div>
+        <h3>Smart Home</h3>
+        <p>35 Products</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="section bg2">
+  <div class="container">
+    <div class="sec-header fade" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <p class="sec-label">Hand Picked</p>
+        <h2 class="sec-title">Featured <span>Products</span></h2>
+      </div>
+      <a href="products.html" class="btn btn-outline-sm fade">View All →</a>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card fade">
+        <div class="product-img">📱</div>
+        <div class="badge-sale">-10%</div>
+        <div class="product-body">
+          <span class="product-cat">Smartphones</span>
+          <h3>ProMax X15 Ultra</h3>
+          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(128)</span></div>
+          <div class="product-price-row">
+            <span class="p-price">Rs. 189,999</span>
+            <span class="p-old">Rs. 210,000</span>
+          </div>
+          <button class="add-to-cart" onclick="addToCart('ProMax X15 Ultra', 189999)">Add to Cart 🛒</button>
+        </div>
+      </div>
+
+      <div class="product-card fade d1">
+        <div class="product-img">💻</div>
+        <div class="badge-new2">New</div>
+        <div class="product-body">
+          <span class="product-cat">Laptops</span>
+          <h3>UltraBook Pro 14</h3>
+          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(85)</span></div>
+          <div class="product-price-row">
+            <span class="p-price">Rs. 245,000</span>
+          </div>
+          <button class="add-to-cart" onclick="addToCart('UltraBook Pro 14', 245000)">Add to Cart 🛒</button>
+        </div>
+      </div>
+
+      <div class="product-card fade d2">
+        <div class="product-img">🎧</div>
+        <div class="badge-sale">-20%</div>
+        <div class="product-body">
+          <span class="product-cat">Audio</span>
+          <h3>SoundMax Pro ANC</h3>
+          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(212)</span></div>
+          <div class="product-price-row">
+            <span class="p-price">Rs. 24,999</span>
+            <span class="p-old">Rs. 31,000</span>
+          </div>
+          <button class="add-to-cart" onclick="addToCart('SoundMax Pro ANC', 24999)">Add to Cart 🛒</button>
+        </div>
+      </div>
+
+      <div class="product-card fade d3">
+        <div class="product-img">⌚</div>
+        <div class="product-body">
+          <span class="product-cat">Smart Watch</span>
+          <h3>FitPro Watch Series 8</h3>
+          <div class="product-rating">⭐⭐⭐⭐ <span>(76)</span></div>
+          <div class="product-price-row">
+            <span class="p-price">Rs. 32,500</span>
+          </div>
+          <button class="add-to-cart" onclick="addToCart('FitPro Watch Series 8', 32500)">Add to Cart 🛒</button>
+        </div>
+      </div>
+
+      <div class="product-card fade">
+        <div class="product-img">📷</div>
+        <div class="badge-sale">-15%</div>
+        <div class="product-body">
+          <span class="product-cat">Cameras</span>
+          <h3>SnapShot 4K DSLR</h3>
+          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(54)</span></div>
+          <div class="product-price-row">
+            <span class="p-price">Rs. 85,000</span>
+            <span class="p-old">Rs. 100,000</span>
+          </div>
+          <button class="add-to-cart" onclick="addToCart('SnapShot 4K DSLR', 85000)">Add to Cart 🛒</button>
+        </div>
+      </div>
+
+      <div class="product-card fade d1">
+        <div class="product-img">🎮</div>
+        <div class="badge-new2">New</div>
+        <div class="product-body">
+          <span class="product-cat">Gaming</span>
+          <h3>GamePad X Pro Controller</h3>
+          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(163)</span></div>
+          <div class="product-price-row">
+            <span class="p-price">Rs. 8,999</span>
+          </div>
+          <button class="add-to-cart" onclick="addToCart('GamePad X Pro Controller', 8999)">Add to Cart 🛒</button>
+        </div>
+      </div>
+
+      <div class="product-card fade d2">
+        <div class="product-img">🔊</div>
+        <div class="product-body">
+          <span class="product-cat">Audio</span>
+          <h3>BassBoom Portable Speaker</h3>
+          <div class="product-rating">⭐⭐⭐⭐ <span>(97)</span></div>
+          <div class="product-price-row">
+            <span class="p-price">Rs. 12,499</span>
+          </div>
+          <button class="add-to-cart" onclick="addToCart('BassBoom Portable Speaker', 12499)">Add to Cart 🛒</button>
+        </div>
+      </div>
+
+      <div class="product-card fade d3">
+        <div class="product-img">🖥️</div>
+        <div class="badge-sale">-8%</div>
+        <div class="product-body">
+          <span class="product-cat">Monitors</span>
+          <h3>ViewClear 27" 4K Monitor</h3>
+          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(41)</span></div>
+          <div class="product-price-row">
+            <span class="p-price">Rs. 68,000</span>
+            <span class="p-old">Rs. 74,000</span>
+          </div>
+          <button class="add-to-cart" onclick="addToCart('ViewClear 27 4K Monitor', 68000)">Add to Cart 🛒</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BANNER STRIP -->
+<section class="promo-strip">
+  <div class="container promo-inner">
+    <div class="promo-item fade"><span class="promo-icon">🚚</span><div><strong>Free Delivery</strong><p>On orders above Rs. 5,000</p></div></div>
+    <div class="promo-item fade d1"><span class="promo-icon">🔄</span><div><strong>Easy Returns</strong><p>7-day hassle-free returns</p></div></div>
+    <div class="promo-item fade d2"><span class="promo-icon">🔒</span><div><strong>Secure Payments</strong><p>100% safe & encrypted</p></div></div>
+    <div class="promo-item fade d3"><span class="promo-icon">🛎️</span><div><strong>24/7 Support</strong><p>We're always here to help</p></div></div>
+  </div>
+</section>
+
+<!-- DEALS BANNER -->
+<section class="section">
+  <div class="container">
+    <div class="deal-banner fade">
+      <div class="deal-text">
+        <span class="deal-tag">🔥 Limited Time</span>
+        <h2>Weekly Flash Sale</h2>
+        <p>Up to 30% off on selected smartphones and laptops. Don't miss out!</p>
+        <a href="products.html" class="btn btn-primary">Grab the Deal →</a>
+      </div>
+      <div class="deal-countdown" id="countdown">
+        <div class="count-box"><span id="hrs">08</span><p>Hours</p></div>
+        <div class="count-sep">:</div>
+        <div class="count-box"><span id="mins">45</span><p>Minutes</p></div>
+        <div class="count-sep">:</div>
+        <div class="count-box"><span id="secs">30</span><p>Seconds</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section bg2">
+  <div class="container">
+    <div class="sec-header fade" style="text-align:center;">
+      <p class="sec-label">Happy Customers</p>
+      <h2 class="sec-title">What Our <span>Customers Say</span></h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card fade">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Ordered the ProMax X15 and received it the next day! Packaging was excellent, product is 100% genuine. TechZone is now my go-to for all electronics."</p>
+        <div class="reviewer"><div class="reviewer-av">H</div><div><strong>Hamza Tariq</strong><span>Lahore</span></div></div>
+      </div>
+      <div class="review-card fade d1">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Best prices in Pakistan for genuine products. I got the SoundMax headphones at 20% off and the quality is absolutely amazing. Highly recommend!"</p>
+        <div class="reviewer"><div class="reviewer-av">Z</div><div><strong>Zainab Malik</strong><span>Karachi</span></div></div>
+      </div>
+      <div class="review-card fade d2">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Customer support was super responsive. Had a question about the laptop specs and they answered within minutes. Great experience from start to finish."</p>
+        <div class="reviewer"><div class="reviewer-av">A</div><div><strong>Ali Hassan</strong><span>Islamabad</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="container fade">
+    <div class="newsletter-box">
+      <div class="newsletter-text">
+        <h2>Get Exclusive Deals in Your Inbox</h2>
+        <p>Subscribe and be the first to know about flash sales, new arrivals and special offers.</p>
+      </div>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Enter your email address..." id="nlEmail"/>
+        <button onclick="subscribeNewsletter()">Subscribe →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">⚡ Tech<span>Zone</span></div>
+        <p>Pakistan's most trusted online electronics store. Genuine products, fast delivery, real support.</p>
+        <div class="footer-socials">
+          <a href="#">📘</a><a href="#">📸</a><a href="#">🐦</a><a href="#">▶️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="products.html">All Products</a>
+        <a href="products.html?cat=phones">Smartphones</a>
+        <a href="products.html?cat=laptops">Laptops</a>
+        <a href="products.html?cat=audio">Audio</a>
+        <a href="products.html?cat=deals">Deals</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Return Policy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>📍 Main Boulevard, Gulberg III, Lahore</p>
+        <p>📞 +92 300 123 4567</p>
+        <p>✉ support@techzone.pk</p>
+        <p>🕐 Mon–Sat: 10AM–8PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 TechZone · All Rights Reserved · Built with HTML, CSS & JavaScript</p>
+      <div class="payment-badges">
+        <span>💳 Visa</span><span>💳 Mastercard</span><span>📱 JazzCash</span><span>📱 EasyPaisa</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- CART TOAST -->
+<div class="cart-toast" id="cartToast">✅ Item added to cart!</div>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart | TechZone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="topbar"><div class="topbar-inner"><span>🚚 Free delivery on orders above Rs. 5,000</span><span>📞 Support: +92 300 123 4567</span></div></div>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">⚡ Tech<span>Zone</span></a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="cart.html" class="nav-icon cart-icon">🛒 <span class="cart-count" id="cartCount">0</span></a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-label">Shopping</p>
+    <h1 class="page-hero-title">Your Cart</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div id="cartContent"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="footer-logo">⚡ Tech<span>Zone</span></div><p>Pakistan's most trusted online electronics store.</p></div>
+      <div class="footer-col"><h4>Shop</h4><a href="products.html">All Products</a><a href="products.html">Deals</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Contact</h4><p>📞 +92 300 123 4567</p><p>✉ support@techzone.pk</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 TechZone · All Rights Reserved</p></div>
+  </div>
+</footer>
+<div class="cart-toast" id="cartToast">✅ Item added to cart!</div>
+<script src="main.js"></script>
+<script>
+function renderCart() {
+  const cart = JSON.parse(localStorage.getItem('tz_cart') || '[]');
+  const container = document.getElementById('cartContent');
+  if (cart.length === 0) {
+    container.innerHTML = `
+      <div class="cart-empty">
+        <div class="cart-empty-icon">🛒</div>
+        <h3>Your cart is empty</h3>
+        <p>Looks like you haven't added anything yet.</p>
+        <a href="products.html" class="btn btn-primary">Browse Products →</a>
+      </div>`;
+    return;
+  }
+  const subtotal = cart.reduce((s,i) => s + i.price * i.qty, 0);
+  const delivery = subtotal >= 5000 ? 0 : 299;
+  const total = subtotal + delivery;
+  const icons = {'ProMax X15 Ultra':'📱','Galaxy S25 Ultra':'📱','Redmi Note 14 Pro':'📱','UltraBook Pro 14':'💻','Dell XPS 15':'💻','HP Pavilion 15':'💻','SoundMax Pro ANC':'🎧','Sony WH-1000XM6':'🎧','BassBoom Speaker':'🔊','FitPro Watch Series 8':'⌚','Apple Watch Ultra 3':'⌚','SnapShot 4K DSLR':'📷','GamePad X Pro':'🎮','Gaming Keyboard':'🎮','ViewClear 27 4K':'🖥️','65W GaN Charger':'🔌','Smart LED Bulbs':'🏠','WiFi Mesh Router':'📡'};
+  container.innerHTML = `
+    <div class="cart-layout">
+      <div class="cart-items" id="cartItems">
+        ${cart.map((item,i) => `
+          <div class="cart-item" id="item-${i}">
+            <div class="cart-item-img">${icons[item.name] || '📦'}</div>
+            <div class="cart-item-info">
+              <h4>${item.name}</h4>
+              <p>Unit Price: Rs. ${item.price.toLocaleString()}</p>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty(${i},-1)">−</button>
+                <span class="qty-num" id="qty-${i}">${item.qty}</span>
+                <button class="qty-btn" onclick="changeQty(${i},1)">+</button>
+              </div>
+            </div>
+            <span class="cart-item-price">Rs. ${(item.price*item.qty).toLocaleString()}</span>
+            <button class="cart-item-remove" onclick="removeItem(${i})" title="Remove">🗑</button>
+          </div>`).join('')}
+      </div>
+      <div class="order-summary">
+        <h3>Order Summary</h3>
+        <div class="summary-row"><span>Subtotal (${cart.reduce((s,i)=>s+i.qty,0)} items)</span><span>Rs. ${subtotal.toLocaleString()}</span></div>
+        <div class="summary-row"><span>Delivery</span><span>${delivery === 0 ? '<span style="color:var(--success)">FREE</span>' : 'Rs. '+delivery}</span></div>
+        <div class="summary-row"><span>Discount</span><span style="color:var(--success)">Rs. 0</span></div>
+        <div class="coupon-row">
+          <input type="text" placeholder="Coupon code..." id="couponInput"/>
+          <button onclick="applyCoupon()">Apply</button>
+        </div>
+        <div class="summary-total"><span>Total</span><span>Rs. ${total.toLocaleString()}</span></div>
+        <button class="checkout-btn" onclick="checkout()">Proceed to Checkout →</button>
+        <p style="font-size:0.74rem;color:var(--muted);margin-top:0.8rem;text-align:center;">🔒 Secure checkout · All payments encrypted</p>
+      </div>
+    </div>`;
+}
+
+function changeQty(index, delta) {
+  let cart = JSON.parse(localStorage.getItem('tz_cart') || '[]');
+  cart[index].qty = Math.max(1, cart[index].qty + delta);
+  localStorage.setItem('tz_cart', JSON.stringify(cart));
+  renderCart();
+  updateCartCount();
+}
+
+function removeItem(index) {
+  let cart = JSON.parse(localStorage.getItem('tz_cart') || '[]');
+  cart.splice(index, 1);
+  localStorage.setItem('tz_cart', JSON.stringify(cart));
+  renderCart();
+  updateCartCount();
+}
+
+function applyCoupon() {
+  const val = document.getElementById('couponInput').value.trim().toUpperCase();
+  if (val === 'TECHZONE10') alert('✅ Coupon applied! 10% discount added.');
+  else alert('❌ Invalid coupon code. Try TECHZONE10');
+}
+
+function checkout() {
+  alert('✅ Order placed successfully!\n\nThank you for shopping with TechZone.\nYou will receive a confirmation SMS shortly.');
+  localStorage.removeItem('tz_cart');
+  window.location.href = 'index.html';
+}
+
+renderCart();
+</script>
+</body>
+</html>
